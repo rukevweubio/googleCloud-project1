@@ -1,0 +1,11 @@
+version: "3.9"  # version 3.x is needed for swarm
+
+services:
+  mario-game:
+    image: googleproject3-mario-game:latest
+    ports:
+      - "8082:80"
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
